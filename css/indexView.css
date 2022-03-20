@@ -1,0 +1,139 @@
+/* font-face declaration start */
+@font-face {
+  font-family: "lato regular";
+  src: url("../fonts/lato_regular.ttf");
+}
+
+@font-face {
+  font-family: "lato bold";
+  src: url(../fonts/lato_bold.ttf);
+}
+
+@font-face {
+  font-family: "lato thin";
+  src: url(../fonts/lato_thin.ttf);
+}
+/* font-face declaration end */
+
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+
+/* plalyer1Container start */
+.h-50vh {
+  height: 50vh;
+}
+
+.player1Container {
+  background-color: #d9d7d6;
+}
+
+.player1Identity {
+  font-family: "lato bold";
+  color: #707070;
+  font-size: 1.875rem;
+}
+
+.currentPlayer {
+  width: 10px;
+  height: 10px;
+  margin-left: 15px;
+  border-radius: 5px;
+}
+
+.pink {
+  background-color: #ee2a40;
+}
+
+.player1GlobalPoints,
+.player2GlobalPoints {
+  font-family: "lato thin";
+  font-size: 1.875rem;
+  color: #ee2a40;
+  padding: 1.76vh 0;
+}
+
+.player1Container section div p:first-child,
+.player2Container section div p:first-child {
+  font-family: "lato regular";
+  font-size: 0.75rem;
+  padding: 1.62vh 0;
+}
+
+.player1CurrentPoints,
+.player2CurrentPoints {
+  color: white;
+  font-family: "lato regular";
+  font-size: 1.25rem;
+  padding-bottom: 1.62vh;
+}
+/* player1Container end */
+
+/* player2Container start */
+.player2Identity {
+  font-family: "lato regular";
+  font-size: 1.875rem;
+  color: #d9d7d6;
+}
+
+.white {
+  background-color: #ffffff;
+}
+/* player2Container end */
+
+/* actionGameContainer start */
+.actionGameContainer {
+  width: 100vw;
+  height: 100vh;
+}
+/* actionGameContainer end */
+
+/* newGameContainer start */
+.newGameContainer {
+  margin-top: 2.64vh;
+}
+
+.newGameContainer img {
+  width: 20px;
+}
+
+.newGameContainer p,
+.rollDice p,
+.savePoints p {
+  font-family: "lato regular";
+  font-size: 0.75rem;
+  padding-left: 15px;
+  color: #707070;
+}
+/* newGameContainer end */
+
+/* dicePoints start */
+.rollDiceResult {
+  width: 50px;
+  height: 50px;
+  box-shadow: 5px 5px 20px #d9d7d6;
+  background-image: url(../images/dice-6-img.png);
+  background-size: cover;
+}
+/* dicePoints end*/
+
+/* actionGameContent start */
+.actionGameContent {
+  margin-bottom: 2.64vh;
+}
+/* actionGameContent end */
+
+/* rollDice start */
+.rollDice img,
+.savePoints img {
+  height: 20px;
+}
+/* rollDice end */
+
+/* savePoints start */
+.savePoints {
+  padding-left: 40px;
+}
+/* savePoints end*/
