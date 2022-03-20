@@ -1,0 +1,60 @@
+/* player1Container start */
+.player1Container,
+.player2Container {
+  width: 50%;
+  height: 100vh;
+}
+
+.player1Identity,
+.player2Identity {
+  font-size: 2.625rem;
+}
+
+.player1GlobalPoints,
+.player2GlobalPoints {
+  font-size: 3rem;
+  padding: 3.25vh 0 32.55vh 0;
+}
+
+.player1Container section div p:first-child,
+.player2Container section div p:first-child {
+  font-size: 1rem;
+  padding: 3.25vh 0 1.95vh 0;
+}
+
+.player1CurrentPoints,
+.player2CurrentPoints {
+  font-size: 1.5rem;
+  padding-bottom: 3.25vh;
+}
+/* player1Container end */
+
+/* newGameContainer start */
+.newGameContainer {
+  margin-top: 5.86vh;
+}
+/* newGameContainer end */
+
+/* dicePoints start */
+.rollDiceResult {
+  width: 100px;
+  height: 100px;
+}
+/* dicePoints end*/
+
+/* actionGameContent start */
+.actionGameContent {
+  margin-bottom: 5.86vh;
+}
+/* actionGameContent end */
+
+/* rollDice start */
+.rollDice,
+.savePoints {
+  width: 100%;
+}
+
+.rollDice {
+  margin-bottom: 5.86vh;
+}
+/* rollDice end */

@@ -21,7 +21,7 @@
   font-size: 16px;
 }
 
-/* plalyer1Container start */
+/* player1Container start */
 .h-50vh {
   height: 50vh;
 }
@@ -39,7 +39,7 @@
 .currentPlayer {
   width: 10px;
   height: 10px;
-  margin-left: 15px;
+  margin-left: 10px;
   border-radius: 5px;
 }
 
@@ -130,6 +130,7 @@
 .savePoints {
   width: 50%;
 }
+
 .rollDice img,
 .savePoints img {
   height: 20px;
