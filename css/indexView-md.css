@@ -1,0 +1,19 @@
+/* newGameContainer start */
+.newGameContainer img {
+  width: 25px;
+}
+/* newGameContainer end */
+
+/* dicePoints start */
+.rollDiceResult {
+  width: 80px;
+  height: 80px;
+}
+/* dicePoints end*/
+
+/* rollDice start */
+.rollDice img,
+.savePoints img {
+  height: 25px;
+}
+/* rollDice end */

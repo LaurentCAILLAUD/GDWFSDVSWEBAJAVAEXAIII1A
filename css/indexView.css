@@ -126,14 +126,12 @@
 /* actionGameContent end */
 
 /* rollDice start */
+.rollDice,
+.savePoints {
+  width: 50%;
+}
 .rollDice img,
 .savePoints img {
   height: 20px;
 }
 /* rollDice end */
-
-/* savePoints start */
-.savePoints {
-  padding-left: 40px;
-}
-/* savePoints end*/
