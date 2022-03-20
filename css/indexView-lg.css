@@ -32,6 +32,7 @@
 /* newGameContainer start */
 .newGameContainer {
   margin-top: 5.86vh;
+  cursor: pointer;
 }
 /* newGameContainer end */
 
@@ -52,6 +53,7 @@
 .rollDice,
 .savePoints {
   width: 100%;
+  cursor: pointer;
 }
 
 .rollDice {
