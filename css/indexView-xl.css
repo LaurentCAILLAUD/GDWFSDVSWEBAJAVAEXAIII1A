@@ -1,0 +1,56 @@
+.wrapperContainer {
+  position: absolute;
+  width: 1024px;
+  height: 768px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #d9d7d6;
+}
+
+/* player1Container start */
+.player1Container,
+.player2Container {
+  height: 100%;
+}
+
+.player1GlobalPoints,
+.player2GlobalPoints {
+  padding: 25px 0 250px 0;
+}
+
+.player1Container section div p:first-child,
+.player2Container section div p:first-child {
+  padding: 25px 0 15px 0;
+}
+
+.player1CurrentPoints,
+.player2CurrentPoints {
+  padding-bottom: 25px;
+}
+/* player1Container end */
+
+/* actionGameContainer start */
+.actionGameContainer {
+  width: 100%;
+  height: 100%;
+}
+/* actionGameContainer end */
+
+/* newGameContainer start */
+.newGameContainer {
+  margin-top: 45px;
+}
+/* newGameContainer end */
+
+/* rollDice start */
+.rollDice {
+  margin-bottom: 25px;
+}
+/* rollDice end */
+
+/* actionGameContent start */
+.actionGameContent {
+  margin-bottom: 45px;
+}
+/* actionGameContent end */
