@@ -40,14 +40,22 @@
 /* newGameContainer start */
 .newGameContainer {
   margin-top: 45px;
+  cursor: pointer;
 }
 /* newGameContainer end */
 
 /* rollDice start */
 .rollDice {
   margin-bottom: 25px;
+  cursor: pointer;
 }
 /* rollDice end */
+
+/* savePoints start */
+.savePoints {
+  cursor: pointer;
+}
+/* savePoints end*/
 
 /* actionGameContent start */
 .actionGameContent {
