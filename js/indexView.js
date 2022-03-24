@@ -1,19 +1,19 @@
 $(() => {
-  /* Variable declaration */
+  /* variable declaration */
   let player1;
   let player2;
   let currentPlayer;
   let changeCurrentPlayer = false;
   /* Add a click event on the new game "button" */
   $(".newGameContainer").click(() => {
-    /* Registration nickname of players */
+    /* registration nickname of players */
     let player1Nickname = savePlayerNicknameWithThisNumber(1);
     let player2Nickname = savePlayerNicknameWithThisNumber(2);
     /* Instanciations of players */
     player1 = new Player(1, player1Nickname, 0, 0);
     player2 = new Player(2, player2Nickname, 0, 0);
     currentPlayer = player1;
-    /* CSS and HTML management */
+    /* formatting of the interface indicating which player is playing and which player is not playing */
     $(".player1Identity").html(player1Nickname);
     $(".player1Container").addClass("grey");
     $(".player1Container .currentPlayer").addClass("pink");
@@ -33,7 +33,7 @@ $(() => {
     $(".rollDiceResult").css("display", "none");
     $(".actionGameContent").css("visibility", "visible");
   });
-  /* Add click event on roll dice "button" */
+  /* add click event on roll dice "button" */
   $(".rollDice").click(() => {
     if (changeCurrentPlayer === false) {
       changeCurrentPlayer = currentPlayer.rollDice();
@@ -45,6 +45,14 @@ $(() => {
       currentPlayer = player1;
       changeCurrentPlayer = false;
       changeCurrentPlayer = currentPlayer.rollDice();
+    }
+  });
+  $(".savePoints").click(() => {
+    currentPlayer.savePoints();
+    if (currentPlayer === player1) {
+      currentPlayer = player2;
+    } else {
+      currentPlayer = player1;
     }
   });
 });

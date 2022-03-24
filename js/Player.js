@@ -50,6 +50,7 @@ class Player {
         return false;
       } else {
         this.roundPoints = 0;
+        /* formatting of the interface indicating which player is playing and which player is not playing */
         $(".player1CurrentPoints").html(this.roundPoints);
         $(".player1Container").removeClass("grey");
         $(".player1Container .currentPlayer").removeClass("pink");
@@ -69,6 +70,7 @@ class Player {
         return false;
       } else {
         this.roundPoints = 0;
+        /* formatting of the interface indicating which player is playing and which player is not playing */
         $(".player2CurrentPoints").html(this.roundPoints);
         $(".player1Container").addClass("grey");
         $(".player1Container .currentPlayer").addClass("pink");
@@ -79,6 +81,51 @@ class Player {
         $(".player2Identity").css("color", "#D9D7D6");
         $(".player2Identity").css("font-family", "lato regular");
         return true;
+      }
+    }
+  }
+
+  /* savePoints in global points method */
+  savePoints() {
+    /* verification of the player who is playing */
+    if (this.id === 1) {
+      this.globalPoints += this.roundPoints;
+      $(".player1GlobalPoints").html(this.globalPoints);
+      this.roundPoints = 0;
+      $(".player1CurrentPoints").html(this.roundPoints);
+      /* if the players's global points is equal or more than 100 points he wins the game */
+      if (this.globalPoints >= 100) {
+        alert("Bravo " + this.nickname + " !. Tu as gagné la partie !");
+      } else {
+        /* formatting of the interface indicating which player is playing and which player is not playing */
+        $(".player1Container").removeClass("grey");
+        $(".player1Container .currentPlayer").removeClass("pink");
+        $(".player1Identity").css("color", "#D9D7D6");
+        $(".player1Identity").css("font-family", "lato regular");
+        $(".player2Container").addClass("grey");
+        $(".player2Container .currentPlayer").addClass("pink");
+        $(".player2Identity").css("color", "#707070");
+        $(".player2Identity").css("font-family", "lato bold");
+      }
+      /* verification of the player who is playing */
+    } else if (this.id === 2) {
+      this.globalPoints += this.roundPoints;
+      $(".player2GlobalPoints").html(this.globalPoints);
+      this.roundPoints = 0;
+      $(".player2CurrentPoints").html(this.roundPoints);
+      /* if the players's global points is equal or more than 100 points he wins the game */
+      if (this.globalPoints >= 100) {
+        alert("Bravo " + this.nickname + " !. Tu as gagné la partie !");
+      } else {
+        /* formatting of the interface indicating which player is playing and which player is not playing */
+        $(".player1Container").addClass("grey");
+        $(".player1Container .currentPlayer").addClass("pink");
+        $(".player1Identity").css("color", "#707070");
+        $(".player1Identity").css("font-family", "lato bold");
+        $(".player2Container").removeClass("grey");
+        $(".player2Container .currentPlayer").removeClass("pink");
+        $(".player2Identity").css("color", "#D9D7D6");
+        $(".player2Identity").css("font-family", "lato regular");
       }
     }
   }
