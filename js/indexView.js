@@ -3,15 +3,15 @@ $(() => {
   let player1;
   let player2;
   let currentPlayer;
-  let changeCurrentPlayer = false;
+  //let changeCurrentPlayer = false;
   /* Add a click event on the new game "button" */
   $(".newGameContainer").click(() => {
     /* registration nickname of players */
     let player1Nickname = savePlayerNicknameWithThisNumber(1);
     let player2Nickname = savePlayerNicknameWithThisNumber(2);
     /* Instanciations of players */
-    player1 = new Player(1, player1Nickname, 0, 0);
-    player2 = new Player(2, player2Nickname, 0, 0);
+    player1 = new Player(1, false, player1Nickname, 0, 0);
+    player2 = new Player(2, false, player2Nickname, 0, 0);
     currentPlayer = player1;
     /* formatting of the interface indicating which player is playing and which player is not playing */
     $(".player1Identity").html(player1Nickname);
@@ -42,16 +42,13 @@ $(() => {
   });
   /* add click event on roll dice "button" */
   $(".rollDice").click(() => {
-    if (changeCurrentPlayer === false) {
-      changeCurrentPlayer = currentPlayer.rollDice();
-    } else if (currentPlayer === player1) {
+    currentPlayer.rollDice();
+    if (currentPlayer === player1 && currentPlayer.loseControl === true) {
       currentPlayer = player2;
-      changeCurrentPlayer = false;
-      changeCurrentPlayer = currentPlayer.rollDice();
-    } else {
+      player1.loseControl = false;
+    } else if (currentPlayer === player2 && currentPlayer.loseControl === true) {
       currentPlayer = player1;
-      changeCurrentPlayer = false;
-      changeCurrentPlayer = currentPlayer.rollDice();
+      player2.loseControl = false;
     }
   });
   /* add click event on save point "button" */

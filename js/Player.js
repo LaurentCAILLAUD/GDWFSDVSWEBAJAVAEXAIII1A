@@ -1,13 +1,15 @@
 class Player {
   /**
-   * Create a new Player object
+   * Create a new player
    * @param {number} id
+   * @param {boolean} loseControl
    * @param {string} nickname
    * @param {number} roundPoints
    * @param {number} globalPoints
    */
-  constructor(id, nickname, roundPoints, globalPoints) {
+  constructor(id, loseControl, nickname, roundPoints, globalPoints) {
     this.id = id;
+    this.loseControl = loseControl;
     this.nickname = nickname;
     this.roundPoints = roundPoints;
     this.globalPoints = globalPoints;
@@ -47,9 +49,9 @@ class Player {
       if (dicePoints > 1) {
         this.roundPoints += dicePoints;
         $(".player1CurrentPoints").html(this.roundPoints);
-        return false;
       } else {
         this.roundPoints = 0;
+        this.loseControl = true;
         alert("Malédiction " + this.nickname + " ! Tu viens de faire 1 avec ton dé. Tu perds donc tous les points accumulés dans cette partie et tu passes ton tour.");
         /* formatting of the interface indicating which player is playing and which player is not playing */
         $(".player1CurrentPoints").html(this.roundPoints);
@@ -61,16 +63,15 @@ class Player {
         $(".player2Container .currentPlayer").addClass("pink");
         $(".player2Identity").css("color", "#707070");
         $(".player2Identity").css("font-family", "lato bold");
-        return true;
       }
       /*  verification of the player who is playing. (When true in returned we change player, when false is returned the player continue to play)*/
     } else if (this.id === 2) {
       if (dicePoints > 1) {
         this.roundPoints += dicePoints;
         $(".player2CurrentPoints").html(this.roundPoints);
-        return false;
       } else {
         this.roundPoints = 0;
+        this.loseControl = true;
         alert("Malédiction " + this.nickname + " ! Tu viens de faire 1 avec ton dé. Tu perds donc tous les points accumulés dans cette partie et tu passes ton tour.");
         /* formatting of the interface indicating which player is playing and which player is not playing */
         $(".player2CurrentPoints").html(this.roundPoints);
@@ -82,7 +83,6 @@ class Player {
         $(".player2Container .currentPlayer").removeClass("pink");
         $(".player2Identity").css("color", "#D9D7D6");
         $(".player2Identity").css("font-family", "lato regular");
-        return true;
       }
     }
   }
@@ -98,6 +98,7 @@ class Player {
       /* if the players's global points is equal or more than 100 points he wins the game */
       if (this.globalPoints >= 100) {
         alert("Bravo " + this.nickname + " !. Tu as gagné la partie !");
+        /* formatting of the interface at the end of a game */
         $(".rollDiceResult").css("display", "none");
         $(".actionGameContent").css("visibility", "hidden");
         $(".player1Container").removeClass("grey");
@@ -122,6 +123,7 @@ class Player {
       /* if the players's global points is equal or more than 100 points he wins the game */
       if (this.globalPoints >= 100) {
         alert("Bravo " + this.nickname + " !. Tu as gagné la partie !");
+        /* formatting of the interface at the end of a game */
         $(".rollDiceResult").css("display", "none");
         $(".actionGameContent").css("visibility", "hidden");
         $(".player2Container").removeClass("grey");
