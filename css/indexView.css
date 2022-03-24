@@ -26,7 +26,7 @@
   height: 50vh;
 }
 
-.player1Container {
+.grey {
   background-color: #d9d7d6;
 }
 
@@ -111,16 +111,17 @@
 
 /* dicePoints start */
 .rollDiceResult {
+  display: none;
   width: 50px;
   height: 50px;
   box-shadow: 5px 5px 20px #d9d7d6;
-  background-image: url(../images/dice-6-img.png);
   background-size: cover;
 }
 /* dicePoints end*/
 
 /* actionGameContent start */
 .actionGameContent {
+  visibility: hidden;
   margin-bottom: 2.64vh;
 }
 /* actionGameContent end */
