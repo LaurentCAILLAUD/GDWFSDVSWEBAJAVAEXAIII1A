@@ -50,6 +50,7 @@ class Player {
         return false;
       } else {
         this.roundPoints = 0;
+        alert("Malédiction " + this.nickname + " ! Tu viens de faire 1 avec ton dé. Tu perds donc tous les points accumulés dans cette partie et tu passes ton tour.");
         /* formatting of the interface indicating which player is playing and which player is not playing */
         $(".player1CurrentPoints").html(this.roundPoints);
         $(".player1Container").removeClass("grey");
@@ -70,6 +71,7 @@ class Player {
         return false;
       } else {
         this.roundPoints = 0;
+        alert("Malédiction " + this.nickname + " ! Tu viens de faire 1 avec ton dé. Tu perds donc tous les points accumulés dans cette partie et tu passes ton tour.");
         /* formatting of the interface indicating which player is playing and which player is not playing */
         $(".player2CurrentPoints").html(this.roundPoints);
         $(".player1Container").addClass("grey");
@@ -96,6 +98,10 @@ class Player {
       /* if the players's global points is equal or more than 100 points he wins the game */
       if (this.globalPoints >= 100) {
         alert("Bravo " + this.nickname + " !. Tu as gagné la partie !");
+        $(".rollDiceResult").css("display", "none");
+        $(".actionGameContent").css("visibility", "hidden");
+        $(".player1Container").removeClass("grey");
+        $(".player1Container .currentPlayer").removeClass("pink");
       } else {
         /* formatting of the interface indicating which player is playing and which player is not playing */
         $(".player1Container").removeClass("grey");
@@ -116,6 +122,10 @@ class Player {
       /* if the players's global points is equal or more than 100 points he wins the game */
       if (this.globalPoints >= 100) {
         alert("Bravo " + this.nickname + " !. Tu as gagné la partie !");
+        $(".rollDiceResult").css("display", "none");
+        $(".actionGameContent").css("visibility", "hidden");
+        $(".player2Container").removeClass("grey");
+        $(".player2Container .currentPlayer").removeClass("pink");
       } else {
         /* formatting of the interface indicating which player is playing and which player is not playing */
         $(".player1Container").addClass("grey");

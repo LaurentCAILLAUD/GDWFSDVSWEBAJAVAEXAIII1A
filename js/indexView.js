@@ -22,6 +22,9 @@ $(() => {
     if ($(".player1CurrentPoints").html() != 0) {
       $(".player1CurrentPoints").html(0);
     }
+    if ($(".player1GlobalPoints").html() != 0) {
+      $(".player1GlobalPoints").html(0);
+    }
     $(".player2Identity").html(player2Nickname);
     $(".player2Container").removeClass("grey");
     $(".player2Container .currentPlayer").removeClass("pink");
@@ -30,8 +33,12 @@ $(() => {
     if ($(".player2CurrentPoints").html() != 0) {
       $(".player2CurrentPoints").html(0);
     }
+    if ($(".player2GlobalPoints").html() != 0) {
+      $(".player2GlobalPoints").html(0);
+    }
     $(".rollDiceResult").css("display", "none");
     $(".actionGameContent").css("visibility", "visible");
+    alert("La partie commence. C'est " + player1.nickname + " qui joue en premier.");
   });
   /* add click event on roll dice "button" */
   $(".rollDice").click(() => {
@@ -47,11 +54,14 @@ $(() => {
       changeCurrentPlayer = currentPlayer.rollDice();
     }
   });
+  /* add click event on save point "button" */
   $(".savePoints").click(() => {
     currentPlayer.savePoints();
-    if (currentPlayer === player1) {
+    if (currentPlayer === player1 && currentPlayer.globalPoints < 100) {
+      alert("Score enregistré " + player1.nickname + ". C'est au tour de " + player2.nickname + " de jouer.");
       currentPlayer = player2;
-    } else {
+    } else if (currentPlayer === player2 && currentPlayer.globalPoints < 100) {
+      alert("Score enregistré " + player2.nickname + ". C'est au tour de " + player1.nickname + " de jouer.");
       currentPlayer = player1;
     }
   });
